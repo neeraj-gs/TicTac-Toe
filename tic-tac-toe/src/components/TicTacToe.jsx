@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import Board from "./Board"
+import { useEffect, useState } from "react";
+import Board from "./Board";
 import GameOver from "./GameOver";
 import GameState from "./GameState";
 import Reset from "./Reset";
@@ -89,6 +89,7 @@ const TicTacToe = () => {
 
   return (
     <div>
+        {/* <img src={xo} alt="xo-image" /> */}
         <h1>Tic Tac Toe </h1>
         <h3>Player X can Start the Game</h3>
         <Board strike={strike} playerTurn={playerTurn} onTileClick={handleTileClick} tiles={tiles} />
