@@ -1,6 +1,6 @@
-const Tile = ({className}) => {
+const Tile = ({className,onClick}) => {
   return (
-    <div className={`tile ${className}`}>
+    <div onClick={onClick} className={`tile ${className}`}>
         
     </div>
   )
