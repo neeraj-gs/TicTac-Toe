@@ -1,6 +1,6 @@
 const Tile = () => {
   return (
-    <div>
+    <div className="tile">
         X
     </div>
   )

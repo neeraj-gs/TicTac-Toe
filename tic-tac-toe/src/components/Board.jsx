@@ -3,7 +3,7 @@ import Tile from "./Tile"
 
 const Board = () => {
   return (
-    <div>
+    <div className="board">
         <Tile />
         <Tile />
         <Tile />
