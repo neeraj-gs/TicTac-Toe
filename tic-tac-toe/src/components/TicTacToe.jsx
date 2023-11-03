@@ -19,8 +19,8 @@ const winningCombo = [
     {combo:[2,5,8],strike:'strike-column-3'},
 
     //Diagonals
-    {combo:[0,4,8],strike:'strike-diagnol-1'},
-    {combo:[2,4,6],strike:'strike-diagnol-2'},
+    {combo:[0,4,8],strike:'strike-diagonal-1'},
+    {combo:[2,4,6],strike:'strike-diagonal-2'},
 ]
 
 const checkWinner = (tiles,setStrike,setGameState)=>{
@@ -90,6 +90,7 @@ const TicTacToe = () => {
   return (
     <div>
         <h1>Tic Tac Toe </h1>
+        <h3>Player X can Start the Game</h3>
         <Board strike={strike} playerTurn={playerTurn} onTileClick={handleTileClick} tiles={tiles} />
         <GameOver gameState={gameState} />
         <Reset gameState={gameState} onReset={handleReset}/>
