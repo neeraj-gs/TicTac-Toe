@@ -55,6 +55,10 @@ const TicTacToe = () => {
 
     const handleTileClick = (index)=>{
 
+        if(gameState !== GameState.inProgress){
+            return;
+        }
+
         if(tiles[index] !== null){
             return
         }
