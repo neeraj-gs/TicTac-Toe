@@ -7,6 +7,7 @@ const playero = "O";
 const TicTacToe = () => {
     const [tiles,setTiles] = useState(Array(9).fill(null))
     const [playerTurn,setPlayerTurn] = useState(playerx)
+    const [strike,setStrike] = useState("strike-row-1");
 
     const handleTileClick = (index)=>{
 
@@ -28,7 +29,7 @@ const TicTacToe = () => {
   return (
     <div>
         <h1>Tic Tac Toe </h1>
-        <Board playerTurn={playerTurn} onTileClick={handleTileClick} tiles={tiles} />
+        <Board strike={strike} playerTurn={playerTurn} onTileClick={handleTileClick} tiles={tiles} />
     </div>
   )
 }
