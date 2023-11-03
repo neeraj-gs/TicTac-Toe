@@ -1,6 +1,6 @@
-const Tile = () => {
+const Tile = ({className}) => {
   return (
-    <div className="tile">
+    <div className={`tile ${className}`}>
         X
     </div>
   )
