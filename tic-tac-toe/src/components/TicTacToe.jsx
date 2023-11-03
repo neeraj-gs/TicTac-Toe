@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import Board from "./Board"
+import GameOver from "./GameOver";
+import GameState from "./GameState";
 
 const playerx = "X";
 const playero = "O";
@@ -38,6 +40,7 @@ const TicTacToe = () => {
     const [tiles,setTiles] = useState(Array(9).fill(null))
     const [playerTurn,setPlayerTurn] = useState(playerx)
     const [strike,setStrike] = useState();
+    const [gameState,setGameState] = useState(GameState.inProgress)
 
     const handleTileClick = (index)=>{
 
@@ -64,6 +67,7 @@ const TicTacToe = () => {
     <div>
         <h1>Tic Tac Toe </h1>
         <Board strike={strike} playerTurn={playerTurn} onTileClick={handleTileClick} tiles={tiles} />
+        <GameOver gameState={gameState} />
     </div>
   )
 }
