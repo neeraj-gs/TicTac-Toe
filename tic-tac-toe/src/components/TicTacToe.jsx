@@ -22,7 +22,7 @@ const winningCombo = [
     {combo:[2,4,6],strike:'strike-diagnol-2'},
 ]
 
-const checkWinner = (tiles,setStrike)=>{
+const checkWinner = (tiles,setStrike,setGameState)=>{
     for(const {combo,strike} of winningCombo ){
         const tileValue1 = tiles[combo[0]]
         const tileValue2 = tiles[combo[1]]
@@ -30,8 +30,19 @@ const checkWinner = (tiles,setStrike)=>{
 
         if(tileValue1 !== null &&  tileValue1 === tileValue2 && tileValue1 === tileValue3){
             setStrike(strike)
-            return true
+            if(tileValue1 === playerx){
+                setGameState(GameState.playerXWins)
+            }else{
+                setGameState(GameState.playerOWins)
+            }
+            return
+            
         }
+    }
+
+    const allfilled = tiles.every((tile)=>tile!==null);
+    if(allfilled) {
+        setGameState(GameState.draw)
     }
 }
 
@@ -40,7 +51,7 @@ const TicTacToe = () => {
     const [tiles,setTiles] = useState(Array(9).fill(null))
     const [playerTurn,setPlayerTurn] = useState(playerx)
     const [strike,setStrike] = useState();
-    const [gameState,setGameState] = useState(GameState.playerXWins)
+    const [gameState,setGameState] = useState(GameState.inProgress)
 
     const handleTileClick = (index)=>{
 
@@ -59,7 +70,7 @@ const TicTacToe = () => {
     }
 
     useEffect(()=>{
-        checkWinner(tiles,setStrike);
+        checkWinner(tiles,setStrike,setGameState);
     },[tiles])
 
 
