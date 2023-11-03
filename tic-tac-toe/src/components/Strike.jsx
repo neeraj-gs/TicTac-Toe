@@ -1,6 +1,6 @@
 const Strike = () => {
   return (
-    <div>Strike</div>
+    <div className="strike">Strike</div>
   )
 }
 
