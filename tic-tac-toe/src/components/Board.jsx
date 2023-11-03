@@ -1,6 +1,10 @@
+import Tile from "./Tile"
+
 const Board = () => {
   return (
-    <div></div>
+    <div>
+        <Tile />
+    </div>
   )
 }
 
