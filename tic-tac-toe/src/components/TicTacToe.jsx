@@ -40,7 +40,7 @@ const TicTacToe = () => {
     const [tiles,setTiles] = useState(Array(9).fill(null))
     const [playerTurn,setPlayerTurn] = useState(playerx)
     const [strike,setStrike] = useState();
-    const [gameState,setGameState] = useState(GameState.inProgress)
+    const [gameState,setGameState] = useState(GameState.playerowins)
 
     const handleTileClick = (index)=>{
 
