@@ -7,6 +7,7 @@ import Reset from "./Reset";
 const playerx = "X";
 const playero = "O";
 
+
 const winningCombo = [
     //ROws
     {combo:[0,1,2],strike:'strike-row-1'},
