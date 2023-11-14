@@ -1,7 +1,7 @@
 import Strike from "./Strike"
 import Tile from "./Tile"
 
-const Board = ({tiles, onTileClick, playerTurn, strike}) => {
+const Board = ({tiles:(string| undefined)[]; onTileClick:(index:number)=>void; playerTurn:string; strike:string|undefined}) => {
   return (
     <div className="board">
         <Tile playerTurn={playerTurn} onClick={()=>onTileClick(0)} value={tiles[0]} className="right-border bottom-border" />

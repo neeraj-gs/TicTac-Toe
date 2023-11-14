@@ -1,4 +1,12 @@
-const Tile = ({className,value,onClick,playerTurn}) => {
+type TileProps = {
+  className: string;
+  value: string | null;
+  onClick: () => void;
+  playerTurn: string | null;
+};
+
+
+const Tile: React.FC<TileProps> = ({className,value,onClick,playerTurn}) => {
 
     let hoverClass = null;
     if(value==null && playerTurn != null){
