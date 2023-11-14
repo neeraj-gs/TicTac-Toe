@@ -1,7 +1,7 @@
 import GameStateEnum from './GameState';
 
 type GameOverProps = {
-  gameState: GameStateEnum;
+  gameState: typeof GameStateEnum[keyof typeof GameStateEnum];
 };
 
 const GameOver: React.FC<GameOverProps> = ({ gameState }) => {
