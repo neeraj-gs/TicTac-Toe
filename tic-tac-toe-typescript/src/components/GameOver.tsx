@@ -1,18 +1,22 @@
-import GameState from "./GameState";
+import GameStateEnum from './GameState';
 
-function GameOver({ gameState }) {
+type GameOverProps = {
+  gameState: GameStateEnum;
+};
+
+const GameOver: React.FC<GameOverProps> = ({ gameState }) => {
   switch (gameState) {
-    case GameState.inProgress:
+    case GameStateEnum.inProgress:
       return <></>;
-    case GameState.playerOWins:
+    case GameStateEnum.playerOWins:
       return <div className="game-over">Player O Wins the Game</div>;
-    case GameState.playerXWins:
+    case GameStateEnum.playerXWins:
       return <div className="game-over">Player X Wins the Game</div>;
-    case GameState.draw:
-      return <div className="game-over">Its a Draw Match!</div>;
+    case GameStateEnum.draw:
+      return <div className="game-over">It's a Draw Match!</div>;
     default:
       return <></>;
   }
-}
+};
 
 export default GameOver;
