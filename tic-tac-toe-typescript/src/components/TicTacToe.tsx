@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Board from "./Board";
 import GameOver from "./GameOver";
 import GameState from "./GameState";
 import Reset from "./Reset";
+import GameStateEnum from './GameState'
 
 const playerx = "X";
 const playero = "O";
@@ -24,7 +25,7 @@ const winningCombo = [
     {combo:[2,4,6],strike:'strike-diagonal-2'},
 ]
 
-const checkWinner = (tiles,setStrike,setGameState)=>{
+const checkWinner = (tiles:(string|null)[],setStrike:React.Dispatch<React.SetStateAction<string | undefined>>,setGameState:React.Dispatch<React.SetStateAction<GameStateEnum>>):void =>{
     for(const {combo,strike} of winningCombo ){
         const tileValue1 = tiles[combo[0]]
         const tileValue2 = tiles[combo[1]]
@@ -55,7 +56,7 @@ const TicTacToe = () => {
     const [strike,setStrike] = useState();
     const [gameState,setGameState] = useState(GameState.inProgress)
 
-    const handleTileClick = (index)=>{
+    const handleTileClick = (index:number)=>{
 
         if(gameState !== GameState.inProgress){
             return;
@@ -79,7 +80,7 @@ const TicTacToe = () => {
         setGameState(GameState.inProgress);
         setTiles(Array(9).fill(null));
         setPlayerTurn(playerx);
-        setStrike(null)
+        setStrike(undefined)
     }
 
 
