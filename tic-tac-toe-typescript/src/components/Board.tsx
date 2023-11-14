@@ -1,7 +1,15 @@
 import Strike from "./Strike"
 import Tile from "./Tile"
 
-const Board = ({tiles:(string| undefined)[]; onTileClick:(index:number)=>void; playerTurn:string; strike:string|undefined}) => {
+type BoardProps = {
+  tiles: (string | null)[];
+  onTileClick: (index: number) => void;
+  playerTurn: string;
+  strike?: string | undefined;
+};
+
+
+const Board:React.FC<BoardProps> = ({tiles, onTileClick, playerTurn, strike}) => {
   return (
     <div className="board">
         <Tile playerTurn={playerTurn} onClick={()=>onTileClick(0)} value={tiles[0]} className="right-border bottom-border" />

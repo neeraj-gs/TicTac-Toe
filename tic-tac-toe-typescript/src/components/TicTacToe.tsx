@@ -25,7 +25,9 @@ const winningCombo = [
     {combo:[2,4,6],strike:'strike-diagonal-2'},
 ]
 
-const checkWinner = (tiles:(string|null)[],setStrike:React.Dispatch<React.SetStateAction<string | undefined>>,setGameState:React.Dispatch<React.SetStateAction<GameStateEnum>>):void =>{
+const checkWinner = (tiles:(string|null)[],
+                    setStrike:React.Dispatch<React.SetStateAction<string | undefined>>,
+                    setGameState:React.Dispatch<React.SetStateAction<typeof GameStateEnum[keyof typeof GameStateEnum]>>):void =>{
     for(const {combo,strike} of winningCombo ){
         const tileValue1 = tiles[combo[0]]
         const tileValue2 = tiles[combo[1]]
@@ -53,7 +55,8 @@ const checkWinner = (tiles:(string|null)[],setStrike:React.Dispatch<React.SetSta
 const TicTacToe = () => {
     const [tiles,setTiles] = useState(Array(9).fill(null))
     const [playerTurn,setPlayerTurn] = useState(playerx)
-    const [strike,setStrike] = useState();
+    const [strike, setStrike] = useState<string | undefined>(undefined);
+
     const [gameState,setGameState] = useState(GameState.inProgress)
 
     const handleTileClick = (index:number)=>{
