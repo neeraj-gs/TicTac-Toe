@@ -1,7 +1,12 @@
-import GameState from "./GameState";
+import GameStateEnum from './GameState';
 
-function Reset({ gameState, onReset }) {
-  if (gameState === GameState.inProgress) {
+type ResetProps = {
+  gameState: GameStateEnum;
+  onReset: () => void;
+};
+
+const Reset:React.FC<ResetProps> = ({ gameState, onReset })=> {
+  if (gameState === GameStateEnum.inProgress) {
     return;
   }
   return (
