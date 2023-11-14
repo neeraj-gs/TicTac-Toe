@@ -3,6 +3,6 @@ const GameStateEnum = {
   playerOWins: 1,
   draw: 2,
   inProgress: 3,
-};
+} as const;
 
 export default GameStateEnum;

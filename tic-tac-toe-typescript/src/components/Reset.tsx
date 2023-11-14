@@ -1,7 +1,7 @@
 import GameStateEnum from './GameState';
 
 type ResetProps = {
-  gameState: GameStateEnum;
+  gameState: typeof GameStateEnum[keyof typeof GameStateEnum];
   onReset: () => void;
 };
 
