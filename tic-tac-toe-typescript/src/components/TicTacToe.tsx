@@ -85,6 +85,7 @@ const TicTacToe = () => {
         setPlayerTurn(playerx);
         setStrike(undefined)
     }
+    
 
 
     useEffect(()=>{
