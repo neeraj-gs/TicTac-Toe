@@ -89,6 +89,7 @@ const TicTacToe = () => {
 
 
     useEffect(()=>{
+        // @ts-ignore
         checkWinner(tiles,setStrike,setGameState);
     },[tiles])
 
